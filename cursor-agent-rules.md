@@ -88,6 +88,21 @@ This document defines universal rules and guardrails for Cursor AI agents, desig
 - Apply domain-driven design principles when appropriate.
 - Favor modular architecture that supports maintainability and extensibility.
 - Implement proper encapsulation, inheritance, and polymorphism when appropriate.
+
+### Microservices and MVC Patterns
+- Follow the feature folder structure for organizing microservice endpoints.
+- Each feature category should contain proper separation of components:
+  - Controller: Handles HTTP requests and responses
+  - Service: Contains business logic
+  - Routes: Defines API routes and endpoints
+  - Repository: Manages data access (when necessary)
+- Match existing patterns when implementing new endpoints.
+- Keep controllers thin with minimal business logic.
+- Place shared utilities and common functionality in appropriate shared modules.
+- Maintain consistent naming conventions across similar features.
+- Follow RESTful API design principles for endpoint structure.
+- Ensure proper error handling at each layer.
+- Implement appropriate validation at controller and service levels.
 - Document architectural decisions with clear reasoning.
 
 ## Security and Best Practices
@@ -123,6 +138,16 @@ This document defines universal rules and guardrails for Cursor AI agents, desig
 - Include performance tests for speed-critical operations.
 
 ## Workflow and Communication
+
+### Code Quality Verification
+- After implementing any changes, verify and fix linting errors.
+- Check for compilation errors before submitting changes.
+- Run relevant unit tests to ensure functionality remains intact.
+- Review code for potential edge cases and failure scenarios.
+- Ensure new implementations maintain consistent error handling patterns.
+- Verify API contracts remain consistent with documentation.
+- Check for any potential performance issues introduced by changes.
+- Validate that changes meet security requirements and best practices.
 
 ### Transparency in Decision Making
 - Explain reasoning behind significant architectural decisions.
@@ -370,13 +395,34 @@ Type: always
 - Write code that is self-documenting where possible
 - Follow consistent formatting and style conventions
 
-## Collaboration and Standards
-- Adapt to the existing codebase style and conventions
-- Provide clear explanations for implementation decisions
-- Suggest improvements while respecting existing architecture
+## Microservice Architecture
+- Organize code using feature folder structure
+- Each feature should contain controller, service, routes, and repository (if needed)
+- Follow existing patterns when adding new endpoints
+- Verify linting and compilation after making changes
 ```
 
 For language or framework-specific rules, create additional rule files that apply only to relevant file types.
+
+## Global User Rules Example
+
+For your global User Rules in Cursor Settings, consider a simplified version focusing on universal principles:
+
+```
+# Universal Development Standards
+
+## Core Principles
+- Prioritize object-oriented design and SOLID principles
+- Write clean, efficient, maintainable code
+- Follow industry best practices
+- Consider performance and security
+
+## Microservice Standards
+- Use feature folder structure for new endpoints
+- Include controller, service, routes, repository components
+- Match existing patterns when implementing new features
+- Run linting and compilation checks after changes
+```
 
 ## Best Practices for Rule Management
 
